@@ -14,7 +14,7 @@
 // 1. functional Component
 // 함수 문법을 사용해 React 요소를 여러 번 생성할 수 있는 컴포넌트 설계
 export function Group() {
-  return React.createElement('div', { role: 'group' }); // <div role="group"></div>
+  return React.createElement("div", { role: "group" }, "그룹 요소"); // <div role="group"></div>
 }
 
 // 2. class Component
