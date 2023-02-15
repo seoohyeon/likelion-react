@@ -6,26 +6,21 @@
 /* 함수 컴포넌트 ------------------------------------------------------------------ */
 
 function AppLogo(props) {
-  
-  let imageSource = '/assets/logo/';
-  imageSource += props.outline ? 'outline' : 'fill';
-  imageSource += props.color === 'white' ? '-white' : '-red';
+  let imageSource = "/assets/logo/";
+  imageSource += props.outline ? "outline" : "fill";
+  imageSource += props.color === "white" ? "-white" : "-red";
 
-  let ext = 'svg';
+  let ext = "svg";
 
-  return (
-    <img src={`${imageSource}.${ext}`} alt="Netflix" />
-  )
+  return <img src={`${imageSource}.${ext}`} alt="Netflix" />;
 }
 
 function AppHomeLink() {
   return (
     <h1>
-      <a href="https://netflix.com/">
-        
-      </a>
+      <a href="https://netflix.com/"></a>
     </h1>
-  )
+  );
 }
 
 function AppSearch() {
@@ -34,7 +29,7 @@ function AppSearch() {
       <label htmlFor="search">검색</label>
       <input id="search" type="search" />
     </form>
-  )
+  );
 }
 
 function AppNav() {
@@ -52,15 +47,14 @@ function AppNav() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 
 class AppHeader extends React.Component {
-
   state = {
     outline: false,
-    color: 'red'
-  }
+    color: "red",
+  };
 
   render() {
     const { logoType } = this.props;
@@ -68,33 +62,35 @@ class AppHeader extends React.Component {
     return (
       <header>
         <AppLogo
-          outline={logoType.shape.includes('outline') ? true : false}
+          outline={logoType.shape.includes("outline") ? true : false}
           color={logoType.color}
         />
-  
+
         <div role="group">
           <button
             type="button"
             onClick={() => {
               this.setState({
-                outline: !this.state.outline
-              })
+                outline: !this.state.outline,
+              });
             }}
           >
             change logo type is outline
           </button>
-          <button 
+          <button
             type="button"
             onClick={() => {
-              console.log('clicked button 2');
+              console.log("clicked button 2");
             }}
-          >change logo type is fill</button>
+          >
+            change logo type is fill
+          </button>
         </div>
-  
+
         {/* <AppLogo outline /> */}
         {/* <AppLogo color="white" /> */}
         {/* <AppLogo color="white" outline /> */}
-  
+
         <AppSearch />
         <AppNav />
       </header>
@@ -108,7 +104,7 @@ function AppMain() {
       <AppLogo />
       <p>앱 메인 정보를 입력합니다.</p>
     </main>
-  )
+  );
 }
 
 function AppFooter() {
@@ -119,7 +115,7 @@ function AppFooter() {
         <small>저작권 정보</small>
       </address>
     </footer>
-  )
+  );
 }
 
 /* 클래스 컴포넌트 ----------------------------------------------------------------- */
@@ -128,20 +124,19 @@ function AppFooter() {
 // - 함수 컴포넌트는 상태를 가질 수 없다.
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
 
-    // 컴포넌트 상태 
+    // 컴포넌트 상태
     // 애플리케이션의 상태
     // 상태 업데이트 → 다시 렌더링!!!
     // 선언형 프로그래밍
     this.state = {
       logoType: {
-        shape: 'outline',
-        color: 'red'
-      }
-    }
+        shape: "outline",
+        color: "red",
+      },
+    };
   }
 
   render() {
@@ -153,13 +148,13 @@ class App extends React.Component {
         <AppMain />
         <AppFooter />
       </div>
-    )
+    );
   }
 }
 
 /* React DOM 렌더 ------------------------------------------------------------- */
 
-const reactDomRoot = ReactDOM.createRoot(document.getElementById('root'));
+const reactDomRoot = ReactDOM.createRoot(document.getElementById("root"));
 
 reactDomRoot.render(
   <React.StrictMode>
