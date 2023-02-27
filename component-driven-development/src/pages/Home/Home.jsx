@@ -1,5 +1,6 @@
-import { BaseLayout, Button, Logo } from '@/components';
+import { BaseLayout, Button, Counter, Logo } from '@/components';
 import classes from './Home.module.scss';
+import classNames from 'classnames';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { useMouse } from '@/hooks/useMouse';
 
@@ -17,6 +18,7 @@ export default function Home() {
         <div style={{ marginTop: 40 }}>
           x: <span>{x}</span> / y: <span>{y}</span>
         </div>
+        <Counter className="myclassName seoClassName" />
       </div>
     </BaseLayout>
   );

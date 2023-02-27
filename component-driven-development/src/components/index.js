@@ -3,6 +3,7 @@ export * from './Layout/Layout';
 export * from './Header/Header';
 export * from './Footer/Footer';
 export * from './Container/Container';
+export * from './Counter/Counter';
 
 export * from './Logo/Logo';
 export * from './Button/Button';
