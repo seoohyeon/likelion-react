@@ -1,7 +1,12 @@
 import classes from './Home.module.scss';
 import classNames from 'classnames';
 import { useDocumentTitle } from '@/hooks/useDocumentTitle';
-import { BaseLayout, CounterStateless, CounterStateful } from '@/components';
+import {
+  BaseLayout,
+  CounterStateless,
+  CounterStateful,
+  Counter,
+} from '@/components';
 import { useState } from 'react';
 
 /* Component ---------------------------------------------------------------- */
